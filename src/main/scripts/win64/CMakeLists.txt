@@ -11,7 +11,6 @@ include_directories("${CMAKE_SOURCE_DIR}/physicsfs/win64/include")
 include_directories("${CMAKE_SOURCE_DIR}/boost/win64/include")
     
 set(CMAKE_SHARED_LINKER_FLAGS "-Xlinker --add-stdcall-alias -Wl,--output-def,ogrell.def")
-set_target_properties(yildizogre PROPERTIES LINKER_LANGUAGE CXX)
  
 file(
         GLOB_RECURSE
@@ -23,6 +22,8 @@ file(
 )
 
 add_library(yildizogre SHARED ${source_files})
+set_target_properties(yildizogre PROPERTIES LINKER_LANGUAGE CXX)
+
 target_link_libraries(yildizogre ${CMAKE_SOURCE_DIR}/ogre3d/win64/lib/libOgreMain.dll.a)
 target_link_libraries(yildizogre ${CMAKE_SOURCE_DIR}/ogre3d/win64/lib/libOgreOverlay.dll.a)
 target_link_libraries(yildizogre ${CMAKE_SOURCE_DIR}/physicsfs/win64/lib/libphysfs.a)
