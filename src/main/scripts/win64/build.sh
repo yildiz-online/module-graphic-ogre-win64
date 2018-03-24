@@ -16,6 +16,12 @@ rm -r build
 rm -r boost
 rm -r physicsfs
 rm -r ogre3d
+rm -r java
+rm libgcc_s_seh-1.dll
+rm libstdc++-6.dll
+rm mingw-toolchain.cmake
+rm -r ../../c++
+rm -r ../../includes
 
 return $r1
 
