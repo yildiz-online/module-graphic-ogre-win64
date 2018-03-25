@@ -55,36 +55,6 @@
             <artifactId>module-graphic-ogre</artifactId>
             <version>2.0.2-SNAPSHOT</version>
         </dependency>
-        <dependency>
-            <groupId>be.yildiz-games</groupId>
-            <artifactId>component-native-ogre3d</artifactId>
-            <version>1.10.11.0</version>
-        </dependency>
-        <dependency>
-            <groupId>be.yildiz-games</groupId>
-            <artifactId>component-native-physicsfs</artifactId>
-            <version>2.0.3.1</version>
-        </dependency>
-        <dependency>
-            <groupId>be.yildiz-games</groupId>
-            <artifactId>component-native-boost</artifactId>
-            <version>1.66.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.platform</groupId>
-            <artifactId>junit-platform-launcher</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-core</artifactId>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
 
     <build>
@@ -136,5 +106,73 @@
             </plugin>
         </plugins>
     </build>
+
+  <profiles>
+    <profile>
+      <id>build</id>
+      <dependencies>
+        <dependency>
+            <groupId>be.yildiz-games</groupId>
+            <artifactId>component-native-ogre3d</artifactId>
+            <version>1.10.11.0</version>
+        </dependency>
+        <dependency>
+            <groupId>be.yildiz-games</groupId>
+            <artifactId>component-native-physicsfs</artifactId>
+            <version>2.0.3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>be.yildiz-games</groupId>
+            <artifactId>component-native-boost</artifactId>
+            <version>1.66.0</version>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>-module-ogre-native-file-unpack</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>be.yildiz-games</groupId>
+                                    <artifactId>module-graphic-ogre</artifactId>
+                                    <outputDirectory>src/</outputDirectory>
+                                    <includes>main/**/*.*</includes>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>be.yildiz-games</groupId>
+                                    <artifactId>component-native-ogre3d</artifactId>
+                                    <outputDirectory>src/main/scripts/win64/ogre3d</outputDirectory>
+                                    <includes>win64/**/*.*</includes>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>be.yildiz-games</groupId>
+                                    <artifactId>component-native-physicsfs</artifactId>
+                                    <outputDirectory>src/main/scripts/win64/physicsfs</outputDirectory>
+                                    <includes>win64/**/*.*</includes>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>be.yildiz-games</groupId>
+                                    <artifactId>component-native-boost</artifactId>
+                                    <outputDirectory>src/main/scripts/win64/boost</outputDirectory>
+                                    <includes>win64/**/*.*</includes>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+          </plugins>
+        </build>
+    </profile>
+  </profiles>
 
 </project>
