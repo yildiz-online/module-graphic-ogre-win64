@@ -1,5 +1,5 @@
 cmake_minimum_required (VERSION 2.8.6)
-project (yildiz_native_ogre C CXX)
+project (yildiz_native_ogre)
  
 set(CMAKE_CXX_FLAGS "-O2")
  
@@ -22,7 +22,6 @@ file(
 )
 
 add_library(yildizogre SHARED ${source_files})
-set_target_properties(yildizogre PROPERTIES LINKER_LANGUAGE CXX)
 
 target_link_libraries(yildizogre ${CMAKE_SOURCE_DIR}/ogre3d/win64/lib/libOgreMain.dll.a)
 target_link_libraries(yildizogre ${CMAKE_SOURCE_DIR}/ogre3d/win64/lib/libOgreOverlay.dll.a)

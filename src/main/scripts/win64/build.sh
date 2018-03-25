@@ -20,8 +20,8 @@ rm -r java
 rm libgcc_s_seh-1.dll
 rm libstdc++-6.dll
 rm mingw-toolchain.cmake
-rm -r ../../c++
 rm -r ../../includes
+rm -r ../../c++
 
 return $r1
 
