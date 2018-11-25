@@ -12,7 +12,7 @@ services:
   - docker
 
 before_install:
-  - docker pull moussavdb/build-java
+  - docker pull moussavdb/build-java-native
 
 script:
   - chmod 777 deploy-maven-central.sh
