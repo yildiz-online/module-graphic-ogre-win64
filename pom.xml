@@ -73,7 +73,7 @@
         <dependency>
             <groupId>be.yildiz-games</groupId>
             <artifactId>component-native-ogre3d</artifactId>
-            <version>1.10.11.0</version>
+            <version>1.10.11.1</version>
         </dependency>
         <dependency>
             <groupId>be.yildiz-games</groupId>
