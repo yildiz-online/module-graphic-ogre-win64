@@ -78,7 +78,7 @@
         <dependency>
             <groupId>be.yildiz-games</groupId>
             <artifactId>component-native-physicsfs</artifactId>
-            <version>2.0.3.2</version>
+            <version>2.0.3.3</version>
         </dependency>
         <dependency>
             <groupId>be.yildiz-games</groupId>
