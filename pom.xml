@@ -131,6 +131,15 @@
             </plugin>
           </plugins>
         </build>
+        <resources>
+            <resource>
+                <directory>src/main/resources/</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>**/project.txt</include>
+                </includes>
+            </resource>
+        </resources>
     </profile>
   </profiles>
 
