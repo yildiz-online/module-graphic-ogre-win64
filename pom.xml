@@ -130,7 +130,6 @@
                 </executions>
             </plugin>
           </plugins>
-        </build>
         <resources>
             <resource>
                 <directory>src/main/resources/</directory>
@@ -140,6 +139,7 @@
                 </includes>
             </resource>
         </resources>
+        </build>
     </profile>
   </profiles>
 

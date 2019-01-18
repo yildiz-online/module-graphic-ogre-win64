@@ -55,6 +55,6 @@ rm mingw-toolchain.cmake
 rm -r ../../includes
 rm -r ../../c++
 
-return $r1
+exit $r1
 
 
