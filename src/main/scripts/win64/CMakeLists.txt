@@ -21,7 +21,7 @@ file(
         ${CMAKE_SOURCE_DIR}/../../includes/*.h
 )
 
-add_library(yildizogre SHARED ${source_files})
+add_library(yildizogre SHARED ${source_files} ${CMAKE_SOURCE_DIR}/version.rc)
 
 target_link_libraries(yildizogre ${CMAKE_SOURCE_DIR}/ogre3d/win64/lib/libOgreMain.dll.a)
 target_link_libraries(yildizogre ${CMAKE_SOURCE_DIR}/ogre3d/win64/lib/libOgreOverlay.dll.a)
