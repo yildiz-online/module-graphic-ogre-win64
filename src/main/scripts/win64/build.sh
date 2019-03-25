@@ -1,6 +1,14 @@
 #!/usr/bin/env bash
 
-cmake . -DCMAKE_BUILD_TYPE=Release -DCMAKE_COLOR_MAKEFILE=on -DLIBRARY_OUTPUT_PATH=" ../../../../target/classes/win64" -DCMAKE_TOOLCHAIN_FILE=mingw-toolchain.cmake
+cmake . -DCMAKE_BUILD_TYPE=Release \
+        -DCMAKE_COLOR_MAKEFILE=on \
+        -DLIBRARY_OUTPUT_PATH=" ../../../../target/classes/win64" \
+        -DCMAKE_TOOLCHAIN_FILE=mingw-toolchain.cmake
+        
+echo "<<<<<<<<<<"        
+cd ../../../..
+ls -l
+echo "<<<<<<<<<<"
 
 make
 r1=$?
