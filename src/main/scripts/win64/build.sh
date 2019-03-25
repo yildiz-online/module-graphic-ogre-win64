@@ -6,7 +6,7 @@ cmake . -DCMAKE_BUILD_TYPE=Release \
         -DCMAKE_TOOLCHAIN_FILE=mingw-toolchain.cmake
         
 echo "<<<<<<<<<<"        
-cd ../../../../target/classes/win64
+cd ../../../../target
 ls -l
 echo "<<<<<<<<<<"
 
