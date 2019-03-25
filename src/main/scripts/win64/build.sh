@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+mkdir -p ../../../../target/classes/win64
+
   echo ">>>>>>>>>>>>>"
   cd physicsfs/win64/bin
   ls -l
