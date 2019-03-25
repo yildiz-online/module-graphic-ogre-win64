@@ -1,16 +1,21 @@
 #!/usr/bin/env bash
 
-cmake . -DCMAKE_BUILD_TYPE=Release \
-        -DCMAKE_COLOR_MAKEFILE=on \
-        -DLIBRARY_OUTPUT_PATH=" ../../../../target/classes/win64" \
-        -DCMAKE_TOOLCHAIN_FILE=mingw-toolchain.cmake
-  
   echo ">>>>>>>>>>>>>"
+  cd physicsfs/win64/bin
   ls -l
 echo "<<<<<<<<<<"        
 cd ../../../../target
 ls -l
 echo "<<<<<<<<<<"
+
+exit -1
+
+cmake . -DCMAKE_BUILD_TYPE=Release \
+        -DCMAKE_COLOR_MAKEFILE=on \
+        -DLIBRARY_OUTPUT_PATH=" ../../../../target/classes/win64" \
+        -DCMAKE_TOOLCHAIN_FILE=mingw-toolchain.cmake
+  
+
 
 make
 r1=$?
