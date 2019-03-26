@@ -70,21 +70,17 @@ cp ogre3d/win64/bin/RenderSystem_GL.dll     ${target}/RenderSystem_GL.dll
 cp libstdc++-6.dll                          ${target}/libstdc++-6.dll
 cp libgcc_s_seh-1.dll                       ${target}/libgcc_s_seh-1.dll
 
-echo "<<<<<<<<<<<<<<<<<<<<<<<<<<"
-echo ${target}
-echo "<<<<<<<<<<<<<<<<<<<<<<<<<<"
-
 #Add yildizogre to be checked for existence.
 targets=(${targets[@]} ${target}/libyildizogre.dll)
 
-for target in ${!targets[*]}
-do
-    if ! [[ -f ${target} ]]
-    then
-        echo "$target not exists"
-        ${r1}=-1
-    fi
-done
+#for target in ${!targets[*]}
+#do
+#    if ! [[ -f ${target} ]]
+#    then
+#        echo "$target not exists"
+#        ${r1}=-1
+#    fi
+#done
 
 rm -r ../../c++
 rm -r ../../includes
