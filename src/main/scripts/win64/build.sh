@@ -17,13 +17,13 @@ echo "    BLOCK \"StringFileInfo\"" >> version.rc
 echo "    BEGIN" >> version.rc
 echo "        BLOCK \"040904b0\"" >> version.rc
 echo "        BEGIN" >> version.rc
-echo "            VALUE \"FileDescription\", \"Yildiz-Engine Audio engine with OpenAL implementation\"" >> version.rc
+echo "            VALUE \"FileDescription\", \"Yildiz-Engine Graphic engine with Ogre3D implementation\"" >> version.rc
 echo "            VALUE \"FileVersion\", \"$VERSION,0\"" | tr . , >> version.rc
-echo "            VALUE \"InternalName\", \"libyildizopenal.dll\"" >> version.rc
+echo "            VALUE \"InternalName\", \"libyildizogre.dll\"" >> version.rc
 echo "            VALUE \"LegalCopyright\", \"Copyright (c) 2019 Gregory Van den Borre\"" >> version.rc
-echo "            VALUE \"OriginalFilename\", \"libyildizopenal.dll\"" >> version.rc
+echo "            VALUE \"OriginalFilename\", \"libyildizogre.dll\"" >> version.rc
 echo "            VALUE \"CompanyName\", \"Yildiz-Games\"" >> version.rc
-echo "            VALUE \"ProductName\", \"Yildiz-Engine Audio OpenAL module\"" >> version.rc
+echo "            VALUE \"ProductName\", \"Yildiz-Engine Graphic Ogre3D module\"" >> version.rc
 echo "            VALUE \"ProductVersion\", \"$VERSION,0\"" | tr . , >> version.rc
 echo "        END" >> version.rc
 echo "    END" >> version.rc
@@ -70,7 +70,7 @@ cp libstdc++-6.dll                          ${target}/libstdc++-6.dll
 cp libgcc_s_seh-1.dll                       ${target}/libgcc_s_seh-1.dll
 
 #Add yildizogre to be checked for existence.
-targets=(${targets[@]} ${target}/yildizogre.dll)
+targets=(${targets[@]} ${target}/libyildizogre.dll)
 
 for target in ${!targets[*]}
 do
