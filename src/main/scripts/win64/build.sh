@@ -1,21 +1,89 @@
 #!/usr/bin/env bash
 
-mkdir -p ../../../../target/classes/win64
+source ../../../../target/classes/project.txt
+
+VERSION=${VERSION%"-SNAPSHOT"}
+
+echo "1 VERSIONINFO" > version.rc
+echo "FILEVERSION $VERSION,0" | tr . , >> version.rc
+echo "PRODUCTVERSION $VERSION,0" | tr . , >> version.rc
+echo "FILEFLAGSMASK 0x17L" >> version.rc
+echo "FILEFLAGS 0x0L" >> version.rc
+echo "FILEOS 0x4L" >> version.rc
+echo "FILETYPE 0x1L" >> version.rc
+echo "FILESUBTYPE 0x0L" >> version.rc
+echo "BEGIN" >> version.rc
+echo "    BLOCK \"StringFileInfo\"" >> version.rc
+echo "    BEGIN" >> version.rc
+echo "        BLOCK \"040904b0\"" >> version.rc
+echo "        BEGIN" >> version.rc
+echo "            VALUE \"FileDescription\", \"Yildiz-Engine Audio engine with OpenAL implementation\"" >> version.rc
+echo "            VALUE \"FileVersion\", \"$VERSION,0\"" | tr . , >> version.rc
+echo "            VALUE \"InternalName\", \"libyildizopenal.dll\"" >> version.rc
+echo "            VALUE \"LegalCopyright\", \"Copyright (c) 2019 Gregory Van den Borre\"" >> version.rc
+echo "            VALUE \"OriginalFilename\", \"libyildizopenal.dll\"" >> version.rc
+echo "            VALUE \"CompanyName\", \"Yildiz-Games\"" >> version.rc
+echo "            VALUE \"ProductName\", \"Yildiz-Engine Audio OpenAL module\"" >> version.rc
+echo "            VALUE \"ProductVersion\", \"$VERSION,0\"" | tr . , >> version.rc
+echo "        END" >> version.rc
+echo "    END" >> version.rc
+echo "    BLOCK \"VarFileInfo\"" >> version.rc
+echo "    BEGIN" >> version.rc
+echo "        VALUE \"Translation\", 0x409, 1200" >> version.rc
+echo "    END" >> version.rc
+echo "END" >> version.rc
+
+target=../../../../target/classes/win64
 
 cmake . -DCMAKE_BUILD_TYPE=Release \
         -DCMAKE_COLOR_MAKEFILE=on \
-        -DLIBRARY_OUTPUT_PATH=" ../../../../../../target/classes/win64" \
+        -DLIBRARY_OUTPUT_PATH="$target/" \
         -DCMAKE_TOOLCHAIN_FILE=mingw-toolchain.cmake
 
 make
 r1=$?
 
-cp physicsfs/win64/bin/libphysfs.dll ../../../../target/classes/win64/libphysfs.dll
-cp ogre3d/win64/bin/OgreMain.dll ../../../../target/classes/win64/OgreMain.dll
-cp ogre3d/win64/bin/OgreOverlay.dll ../../../../target/classes/win64/OgreOverlay.dll
-cp ogre3d/win64/bin/Plugin_ParticleFX.dll ../../../../target/classes/win64/Plugin_ParticleFX.dll
-cp ogre3d/win64/bin/RenderSystem_GL.dll ../../../../target/classes/win64/RenderSystem_GL.dll
+files=(
+    physicsfs/win64/bin/libphysfs.dll
+    ogre3d/win64/bin/OgreMain.dll
+    ogre3d/win64/bin/OgreOverlay.dll
+    ogre3d/win64/bin/Plugin_ParticleFX.dll
+    ogre3d/win64/bin/RenderSystem_GL.dll
+    libstdc++-6.dll
+    libgcc_s_seh-1.dll)
 
-exit $r1
+targets=(
+    ${target}/libphysfs.dll
+    ${target}/OgreMain.dll
+    ${target}/OgreOverlay.dll
+    ${target}/Plugin_ParticleFX.dll
+    ${target}/RenderSystem_GL.dll
+    ${target}/libstdc++-6.dll
+    ${target}/libgcc_s_seh-1.dll)
+
+cp physicsfs/win64/bin/libphysfs.dll        ${target}/libphysfs.dll
+cp ogre3d/win64/bin/OgreMain.dll            ${target}/OgreMain.dll
+cp ogre3d/win64/bin/OgreOverlay.dll         ${target}/OgreOverlay.dll
+cp ogre3d/win64/bin/Plugin_ParticleFX.dll   ${target}/Plugin_ParticleFX.dll
+cp ogre3d/win64/bin/RenderSystem_GL.dll     ${target}/RenderSystem_GL.dll
+cp libstdc++-6.dll                          ${target}/libstdc++-6.dll
+cp libgcc_s_seh-1.dll                       ${target}/libgcc_s_seh-1.dll
+
+#Add yildizogre to be checked for existence.
+targets=(${targets[@]} ${target}/yildizogre.dll)
+
+for target in ${!targets[*]}
+do
+    if ! [[ -f ${target} ]]
+    then
+        echo "$target not exists"
+        ${r1}=-1
+    fi
+done
+
+rm -r ../../c++
+rm -r ../../includes
+
+exit ${r1}
 
 

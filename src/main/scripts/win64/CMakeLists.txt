@@ -1,5 +1,6 @@
 cmake_minimum_required (VERSION 2.8.6)
-project (yildiz_native_ogre)
+
+project (module-graphic-ogre-win64)
  
 set(CMAKE_CXX_FLAGS "-O2")
  
@@ -10,7 +11,7 @@ include_directories("${CMAKE_SOURCE_DIR}/ogre3d/win64/include/OGRE/Overlay")
 include_directories("${CMAKE_SOURCE_DIR}/physicsfs/win64/include")
 include_directories("${CMAKE_SOURCE_DIR}/boost/win64/include")
     
-set(CMAKE_SHARED_LINKER_FLAGS "-Xlinker --add-stdcall-alias -Wl,--output-def,ogrell.def")
+set(CMAKE_SHARED_LINKER_FLAGS "-Xlinker --add-stdcall-alias -Wl,--output-def, ogrell.def")
  
 file(
         GLOB_RECURSE
