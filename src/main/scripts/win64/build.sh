@@ -61,6 +61,7 @@ targets=(
     ${target}/libstdc++-6.dll
     ${target}/libgcc_s_seh-1.dll)
 
+
 cp physicsfs/win64/bin/libphysfs.dll        ${target}/libphysfs.dll
 cp ogre3d/win64/bin/OgreMain.dll            ${target}/OgreMain.dll
 cp ogre3d/win64/bin/OgreOverlay.dll         ${target}/OgreOverlay.dll
@@ -68,6 +69,10 @@ cp ogre3d/win64/bin/Plugin_ParticleFX.dll   ${target}/Plugin_ParticleFX.dll
 cp ogre3d/win64/bin/RenderSystem_GL.dll     ${target}/RenderSystem_GL.dll
 cp libstdc++-6.dll                          ${target}/libstdc++-6.dll
 cp libgcc_s_seh-1.dll                       ${target}/libgcc_s_seh-1.dll
+
+echo "<<<<<<<<<<<<<<<<<<<<<<<<<<"
+echo ${target}
+echo "<<<<<<<<<<<<<<<<<<<<<<<<<<"
 
 #Add yildizogre to be checked for existence.
 targets=(${targets[@]} ${target}/libyildizogre.dll)
