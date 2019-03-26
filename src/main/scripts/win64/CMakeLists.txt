@@ -11,7 +11,7 @@ include_directories("${CMAKE_SOURCE_DIR}/ogre3d/win64/include/OGRE/Overlay")
 include_directories("${CMAKE_SOURCE_DIR}/physicsfs/win64/include")
 include_directories("${CMAKE_SOURCE_DIR}/boost/win64/include")
     
-set(CMAKE_SHARED_LINKER_FLAGS "-Xlinker --add-stdcall-alias -Wl")
+set(CMAKE_SHARED_LINKER_FLAGS "-Xlinker --add-stdcall-alias -W")
  
 file(
         GLOB_RECURSE
