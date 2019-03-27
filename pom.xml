@@ -138,6 +138,16 @@
                 </executions>
             </plugin>
           </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources/</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>**/project.txt</include>
+                </includes>
+            </resource>
+        </resources>
+    </resources>
         </build>
     </profile>
   </profiles>
