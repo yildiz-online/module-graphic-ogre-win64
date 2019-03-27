@@ -49,7 +49,7 @@
         <nativeEnv>win64</nativeEnv>
         <module-graphic-ogre.version>2.1.3-SNAPSHOT</module-graphic-ogre.version>
         <component-native-ogre3d.version>1.10.11.2</component-native-ogre3d.version>
-        <component-native-physicsfs.version>2.0.3.3</component-native-physicsfs.version>
+        <component-native-physicsfs.version>3.0.1.1</component-native-physicsfs.version>
         <component-native-boost.version>1.66.0.1</component-native-boost.version>
     </properties>
 
