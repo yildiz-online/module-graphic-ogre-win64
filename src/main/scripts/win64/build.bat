@@ -25,5 +25,3 @@ rmdir includes
 rmdir c++
 
 EXIT /B $r1
-
-
