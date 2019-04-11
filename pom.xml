@@ -48,6 +48,7 @@
     <properties>
         <nativeEnv>win64</nativeEnv>
         <module-graphic-ogre.version>2.1.3-SNAPSHOT</module-graphic-ogre.version>
+        <module-physfs.version>1.0.0-SNAPSHOT</module-physfs.version>
         <component-native-ogre3d.version>1.10.11.2</component-native-ogre3d.version>
         <component-native-physicsfs.version>3.0.1.1</component-native-physicsfs.version>
         <component-native-boost.version>1.66.0.1</component-native-boost.version>
@@ -74,6 +75,11 @@
         <profile>
             <id>build</id>
             <dependencies>
+                <dependency>
+                    <groupId>be.yildiz-games</groupId>
+                    <artifactId>module-vfs-physfs-win64</artifactId>
+                    <version>${module-physfs.version}</version>
+                </dependency>
                 <dependency>
                     <groupId>be.yildiz-games</groupId>
                     <artifactId>component-native-ogre3d</artifactId>
@@ -110,6 +116,13 @@
                                             <version>${module-graphic-ogre.version}</version>
                                             <outputDirectory>src/</outputDirectory>
                                             <includes>main/**/*.*</includes>
+                                        </artifactItem>
+                                        <artifactItem>
+                                            <groupId>be.yildiz-games</groupId>
+                                            <artifactId>module-vfs-physfs-win64</artifactId>
+                                            <version>${module-physfs.version}</version>
+                                            <outputDirectory>src/main/scripts/win64/physicsfs</outputDirectory>
+                                            <includes>win64/**/*.*</includes>
                                         </artifactItem>
                                         <artifactItem>
                                             <groupId>be.yildiz-games</groupId>

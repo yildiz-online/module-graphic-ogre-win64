@@ -38,13 +38,15 @@ target=../../../../target/classes/win64
 cmake . -DCMAKE_BUILD_TYPE=Release \
         -DCMAKE_COLOR_MAKEFILE=on \
         -DLIBRARY_OUTPUT_PATH="$target/" \
+        -DPHYSFS_INCLUDE_DIR="physicsfs/win64/include" \
+        -DPHYSFS_LIBRARY="physicsfs/win64/libyildizphysfs.dll" \
         -DCMAKE_TOOLCHAIN_FILE=mingw-toolchain.cmake
 
 make
 r1=$?
 
 files=(
-    physicsfs/win64/bin/libphysfs.dll
+    physicsfs/win64/libyildizphysfs.dll
     ogre3d/win64/bin/OgreMain.dll
     ogre3d/win64/bin/OgreOverlay.dll
     ogre3d/win64/bin/Plugin_ParticleFX.dll
@@ -53,7 +55,7 @@ files=(
     libgcc_s_seh-1.dll)
 
 targets=(
-    ${target}/libphysfs.dll
+    ${target}/libyildizphysfs.dll
     ${target}/OgreMain.dll
     ${target}/OgreOverlay.dll
     ${target}/Plugin_ParticleFX.dll
@@ -62,7 +64,7 @@ targets=(
     ${target}/libgcc_s_seh-1.dll)
 
 
-cp physicsfs/win64/bin/libphysfs.dll        ${target}/libphysfs.dll
+cp physicsfs/win64/libyildizphysfs.dll      ${target}/libyildizphysfs.dll
 cp ogre3d/win64/bin/OgreMain.dll            ${target}/OgreMain.dll
 cp ogre3d/win64/bin/OgreOverlay.dll         ${target}/OgreOverlay.dll
 cp ogre3d/win64/bin/Plugin_ParticleFX.dll   ${target}/Plugin_ParticleFX.dll
