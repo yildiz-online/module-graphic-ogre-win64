@@ -39,7 +39,6 @@ cmake . -DCMAKE_BUILD_TYPE=Release \
         -DCMAKE_COLOR_MAKEFILE=on \
         -DLIBRARY_OUTPUT_PATH="$target/" \
         -DPHYSFS_INCLUDE_DIR="physicsfs/win64/include" \
-        -DPHYSFS_LIBRARY="physicsfs/win64/libyildizphysfs.dll" \
         -DCMAKE_TOOLCHAIN_FILE=mingw-toolchain.cmake
 
 make
