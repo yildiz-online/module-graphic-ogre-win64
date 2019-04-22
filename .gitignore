@@ -1,7 +1,6 @@
 module-graphic-ogre-win64.iml
 target
 src/main/c++
-src/main/includes
 src/main/scripts/win64/boost
 src/main/scripts/win64/ogre3d
 src/main/scripts/win64/physicsfs
