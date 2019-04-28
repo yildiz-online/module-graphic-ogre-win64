@@ -45,7 +45,6 @@ make
 r1=$?
 
 files=(
-    physicsfs/win64/libyildizphysfs.dll
     ogre3d/win64/bin/OgreMain.dll
     ogre3d/win64/bin/OgreOverlay.dll
     ogre3d/win64/bin/Plugin_ParticleFX.dll
@@ -54,7 +53,6 @@ files=(
     libgcc_s_seh-1.dll)
 
 targets=(
-    ${target}/libyildizphysfs.dll
     ${target}/OgreMain.dll
     ${target}/OgreOverlay.dll
     ${target}/Plugin_ParticleFX.dll
@@ -63,7 +61,6 @@ targets=(
     ${target}/libgcc_s_seh-1.dll)
 
 
-cp physicsfs/win64/libyildizphysfs.dll      ${target}/libyildizphysfs.dll
 cp ogre3d/win64/bin/OgreMain.dll            ${target}/OgreMain.dll
 cp ogre3d/win64/bin/OgreOverlay.dll         ${target}/OgreOverlay.dll
 cp ogre3d/win64/bin/Plugin_ParticleFX.dll   ${target}/Plugin_ParticleFX.dll
