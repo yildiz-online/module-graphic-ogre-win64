@@ -90,11 +90,6 @@
                     <artifactId>component-native-physicsfs</artifactId>
                     <version>${component-native-physicsfs.version}</version>
                 </dependency>
-                <dependency>
-                    <groupId>be.yildiz-games</groupId>
-                    <artifactId>component-native-boost</artifactId>
-                    <version>${component-native-boost.version}</version>
-                </dependency>
             </dependencies>
             <build>
                 <plugins>
@@ -136,13 +131,6 @@
                                             <artifactId>component-native-physicsfs</artifactId>
                                             <outputDirectory>src/main/scripts/win64/physicsfs</outputDirectory>
                                             <version>${component-native-physicsfs.version}</version>
-                                            <includes>win64/**/*.*</includes>
-                                        </artifactItem>
-                                        <artifactItem>
-                                            <groupId>be.yildiz-games</groupId>
-                                            <artifactId>component-native-boost</artifactId>
-                                            <outputDirectory>src/main/scripts/win64/boost</outputDirectory>
-                                            <version>${component-native-boost.version}</version>
                                             <includes>win64/**/*.*</includes>
                                         </artifactItem>
                                     </artifactItems>

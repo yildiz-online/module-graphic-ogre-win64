@@ -9,7 +9,6 @@ include_directories("${CMAKE_SOURCE_DIR}/java/include/win32")
 include_directories("${CMAKE_SOURCE_DIR}/ogre3d/win64/include/OGRE")
 include_directories("${CMAKE_SOURCE_DIR}/ogre3d/win64/include/OGRE/Overlay")
 include_directories(${PHYSFS_INCLUDE_DIR})
-include_directories("${CMAKE_SOURCE_DIR}/boost/win64/include")
     
 set(CMAKE_SHARED_LINKER_FLAGS "-Xlinker --add-stdcall-alias -W")
  
