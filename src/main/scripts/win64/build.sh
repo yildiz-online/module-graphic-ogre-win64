@@ -80,7 +80,4 @@ targets=(${targets[@]} ${target}/libyildizogre.dll)
 #    fi
 #done
 
-rm -r ../../c++
-rm -r ../../includes
-
 exit ${r1}
