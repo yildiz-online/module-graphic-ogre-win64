@@ -27,4 +27,3 @@ target_link_libraries(yildizogre ${CMAKE_SOURCE_DIR}/ogre3d/win64/lib/libOgreMai
 target_link_libraries(yildizogre ${CMAKE_SOURCE_DIR}/ogre3d/win64/lib/libOgreOverlay.dll.a)
 target_link_libraries(yildizogre ${CMAKE_SOURCE_DIR}/physicsfs/win64/lib/libphysfs.a)
 target_link_libraries(yildizogre ${CMAKE_SOURCE_DIR}/physicsfs/win64/libyildizphysfs.dll.a)
-
