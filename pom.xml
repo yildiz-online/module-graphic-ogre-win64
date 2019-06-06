@@ -54,7 +54,7 @@
   <properties>
     <nativeEnv>win64</nativeEnv>
     <module-graphic-ogre.version>2.1.3-SNAPSHOT</module-graphic-ogre.version>
-    <module-physfs.version>1.0.0</module-physfs.version>
+    <module-physfs.version>1.0.1-SNAPSHOT</module-physfs.version>
     <component-native-ogre3d.version>1.10.11.2</component-native-ogre3d.version>
     <component-native-physicsfs.version>3.0.1.1</component-native-physicsfs.version>
   </properties>
