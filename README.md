@@ -53,7 +53,7 @@ In your maven project, add the dependency
 <dependency>
     <groupId>be.yildiz-games</groupId>
     <artifactId>module-graphic-ogre-win64</artifactId>
-    <versionLATEST</version>
+    <version>LATEST</version>
 </dependency>
 ```
 ## Contact
