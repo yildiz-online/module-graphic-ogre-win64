@@ -57,6 +57,7 @@
     <module-physfs.version>1.0.1-SNAPSHOT</module-physfs.version>
     <component-native-ogre3d.version>1.12.0.0-SNAPSHOT</component-native-ogre3d.version>
     <component-native-physicsfs.version>3.0.1.1</component-native-physicsfs.version>
+    <component-native-freeimage.version>3.18.0.1-SNAPSHOT</component-native-freeimage.version>
   </properties>
 
   <dependencies>
@@ -94,6 +95,11 @@
           <groupId>be.yildiz-games</groupId>
           <artifactId>component-native-physicsfs</artifactId>
           <version>${component-native-physicsfs.version}</version>
+        </dependency>
+        <dependency>
+          <groupId>be.yildiz-games</groupId>
+          <artifactId>component-native-freeimage</artifactId>
+          <version>${component-native-freeimage.version}</version>
         </dependency>
       </dependencies>
       <build>
@@ -136,6 +142,13 @@
                       <artifactId>component-native-physicsfs</artifactId>
                       <outputDirectory>src/main/scripts/win64/physicsfs</outputDirectory>
                       <version>${component-native-physicsfs.version}</version>
+                      <includes>win64/**/*.*</includes>
+                    </artifactItem>
+                    <artifactItem>
+                      <groupId>be.yildiz-games</groupId>
+                      <artifactId>component-native-freeimage</artifactId>
+                      <outputDirectory>src/main/scripts/win64/freeimage</outputDirectory>
+                      <version>${component-native-freeimage.version}</version>
                       <includes>win64/**/*.*</includes>
                     </artifactItem>
                   </artifactItems>
