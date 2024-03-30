@@ -56,7 +56,7 @@
     <module-graphic-ogre.version>2.1.3-SNAPSHOT</module-graphic-ogre.version>
     <module-physfs.version>1.0.1-SNAPSHOT</module-physfs.version>
     <component-native-ogre3d.version>1.12.0.0-SNAPSHOT</component-native-ogre3d.version>
-    <component-native-physicsfs.version>3.0.1.1</component-native-physicsfs.version>
+    <component-native-physicsfs.version>3.0.2.1</component-native-physicsfs.version>
     <component-native-freeimage.version>3.18.0.1-SNAPSHOT</component-native-freeimage.version>
   </properties>
 
